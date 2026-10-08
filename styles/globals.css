@@ -19,5 +19,5 @@
   --radius-md:22px;
   --radius-lg:32px
 }
-html,body,#__next{min-height:100%;margin:0}*{box-sizing:border-box}button{font:inherit}
+html,body,#__next{min-height:100%;margin:0}html{scroll-behavior:smooth}*{box-sizing:border-box}button{font:inherit}
 body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}

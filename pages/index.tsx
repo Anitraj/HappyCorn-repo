@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import styles from "./index.module.css";
@@ -21,7 +21,7 @@ const heroPopcorns = [
   [72, 72, 16, .6, 4.6], [88, 62, -26, .8, 5.6], [5, 76, 12, .64, 5.0], [94, 42, -18, .55, 4.4],
 ];
 
-function CTAButton({ children, variant = "primary", onClick }: { children: React.ReactNode; variant?: "primary" | "secondary"; onClick?: () => void }) {
+function CTAButton({ children, variant = "primary", onClick }: { children: ReactNode; variant?: "primary" | "secondary"; onClick?: () => void }) {
   return <button type="button" className={styles.cta + " " + (variant === "secondary" ? styles.ctaSecondary : "")} onClick={onClick}>{children}</button>;
 }
 
@@ -209,7 +209,7 @@ export default function HomePage() {
         <div className={styles.navActions}><button type="button" aria-label="Search" className={styles.iconButton}>⌕</button><button type="button" aria-label="Shopping bag" className={styles.iconButton}>♧</button></div>
       </nav>
 
-      <section id="home" className={styles.hero} ref={heroRef as React.RefObject<HTMLElement>} data-revealed={heroRevealed}>
+      <section id="home" className={styles.hero} ref={heroRef} data-revealed={heroRevealed}>
         <div className={styles.heroGlow} />
         <div className={styles.heroBanner} aria-label="HappyCorn animated popcorn banner">
           <img src={heroImage} alt="HappyCorn popcorn celebration" />
@@ -232,7 +232,7 @@ export default function HomePage() {
         <div className={styles.heroMarquee}>POP • CRUNCH • SMILE • POP • CRUNCH • SMILE • </div>
       </section>
 
-      <section id="flavours" className={styles.flavourSection} ref={flavourRef as React.RefObject<HTMLElement>} data-revealed={flavourRevealed}>
+      <section id="flavours" className={styles.flavourSection} ref={flavourRef} data-revealed={flavourRevealed}>
         <div className={styles.sectionIntro}><span className={styles.sectionEyebrow}>CHOOSE YOUR</span><h2>FLAVOUR<span>.</span></h2><p>Four big personalities. One very happy popcorn.</p></div>
         <div className={styles.flavourGrid}>
           {flavours.map((flavour) => (
@@ -249,7 +249,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="story" className={styles.journeySection} ref={journeyRef as React.RefObject<HTMLElement>} data-revealed={journeyRevealed}>
+      <section id="story" className={styles.journeySection} ref={journeyRef} data-revealed={journeyRevealed}>
         <div className={styles.journeyHeading}><span className={styles.sectionEyebrow}>FROM KERNEL TO CRUNCH</span><h2>THE HAPPY<span>CORN</span> JOURNEY</h2></div>
         <div className={styles.journeyTrack}>
           {[["01","KERNEL","It all starts with a little pop of potential.","🌽"],["02","HEAT","A little heat. A lot of anticipation.","〰️"],["03","POP","Then suddenly… everything gets happy.","💥"],["04","SEASON","Big flavour gets tossed in.","✨"],["05","CRUNCH","That golden, irresistible moment.","🍿"]].map(([num,title,copy,icon]) => (
@@ -258,7 +258,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="products" className={styles.productsSection} ref={productsRef as React.RefObject<HTMLElement>} data-revealed={productsRevealed}>
+      <section id="products" className={styles.productsSection} ref={productsRef} data-revealed={productsRevealed}>
         <div className={styles.productsHeader}><div><span className={styles.sectionEyebrow}>READY TO CRUNCH?</span><h2>FIND YOUR<br /><em>HAPPY.</em></h2></div><p>Small packs. Big happiness. Pick your flavour and make every moment a little more fun.</p></div>
         <div className={styles.productList}>
           {flavours.map((flavour) => (

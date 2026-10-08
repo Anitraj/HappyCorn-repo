@@ -1,3 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+:root{
+  --background:#fff9ed;
+  --foreground:#32170e;
+  --surface:#fff3d8;
+  --muted:#f3e7d0;
+  --muted-foreground:#765f52;
+  --primary:#e51d24;
+  --primary-foreground:#fff;
+  --secondary:#ffd42a;
+  --secondary-foreground:#32170e;
+  --border:#ead7b7;
+  --font-family-base:'Nunito Sans',system-ui,sans-serif;
+  --font-family-display:'Bricolage Grotesque',system-ui,sans-serif;
+  --shadow:0 10px 30px rgba(72,35,12,.10);
+  --shadow-md:0 18px 45px rgba(72,35,12,.14);
+  --radius:16px;
+  --radius-md:22px;
+  --radius-lg:32px
+}
 html,body,#__next{min-height:100%;margin:0}
 body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
